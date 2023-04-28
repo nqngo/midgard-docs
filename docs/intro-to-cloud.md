@@ -1,6 +1,6 @@
 # Introduction to Cloud Computing
 
-This section contains important pre-reading if you are completely new to _Cloud Computing_. Understanding this information, it will make the instructions in [Cloud Starter](cloud-starter/intro.md) easier to follow.
+This section contains important pre-reading if you are completely new to _Cloud Computing_. Understanding this information, it will make the instructions in [Cloud Starter](cloud-starter/00-intro.md) easier to follow.
 
 ## What is the Midgard Cloud?
 
