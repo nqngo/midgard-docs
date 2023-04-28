@@ -1,3 +1,18 @@
-site_name: Midgard Lab 
+site_name: Midgard Lab
+site_description: 'VAIT Openstack Cloud Documentation'
 theme:
-  name: 'readthedocs'
+  name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  palette: 
+    - scheme: default
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+markdown_extensions:
+  - attr_list
+  - md_in_html

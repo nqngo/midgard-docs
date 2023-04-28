@@ -1,46 +1,36 @@
 # Welcome to Midgard
+<figure markdown>
+  ![Midgard Logo](assets/logo.png){: style="height:300px;"}
+</figure>
 
-Welcome to **Midgard**. **Midgard** is a private OpenStack cloud for VAIT testing, training, and development purpose. At the moment, **Midgard** offers the following capacities:
+Welcome to **Midgard**, a private OpenStack cloud for VAIT testing, training, and development purposes. Currently, **Midgard** offers the following capacities:
 
-- Virtual Machines.
-- Persistent Volume Storages.
-- Managed Docker instance.
-- API Access: OpenStack CLI, CloudFormation, Terraform, OpenStack Heat.
-
-The following features are under development and can be only be tested via the API:
-- Managed Kubernetes.
+- Virtual Machines
+- Automatic SSL termination via [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
 
 Default quota:
 
-- _Max instances_: 4
-- _Max VCPUS_: 4
-- _Max RAM_: 8GB
-- _Max persistent storage_: 120GB
+| Property   | Value |
+| ---------- | ----- |
+| Instances  | 1     |
+| VCPUS      | 2     |
+| RAM        | 4GB   |
 
-As this is a private lab, service uptime is not guaranteed and your project might be decommisioned to support other users.
+Please note that **Midgard** is a private lab and its service uptime is not guaranteed. Your project may be decommissioned to support other users, and it will be automatically deleted after 30 days. If you require a longer retention period, please renew your project before the 30-day period by running `/midgard renew`.
 
 ## Limitations
 
-1. **Midgard** has no public IP addresses. You will not be able to provide direct access to your instance through WAN. If you require ingress through WAN, it is recommended that you expose a `cloudflared` tunnel or setup your own reversed proxy.
-2. **Midgard** is a self-serviced Infrastructure-as-a-Service platform. You are responsible for the setup, maintenance, upgrade of your own instances.
+Please be aware of the following limitations when using **Midgard**:
 
-## How to request Access
+1. **Midgard** does not have public IP addresses, so you will not be able to provide direct access to your instance. You will need to use `cloudflared` tunnel to access your instance unless it is served over HTTPS.
+2. **Midgard** is a self-serviced Infrastructure-as-a-Service platform. You are responsible for setting up, maintaining, and upgrading your own instances.
 
-To request access, please provide the correct information on `#vait-cloud` channel using the following template:
+## Quick Start
 
-```
-Github: <your_username>
-Fullname: <your_fullname>
-Reason for Access: <your_reason_for_access>
-```
+To request access, simply use the following slash command in the VAIT Discord:
 
-Eg:
-
-```
-Github: nqngo
-Fullname: Nhat Ngo
-Reason for Access: Testing k3s for homelab use.
+```shell
+/midgard register
 ```
 
-Once your request is approved, you will receive a private message from the cloud maintainer. Please setup your access following the instruction on [Accessing the Lab](access-the-lab).
-
+Once your request is provisioned, **@Midgard Cloud** bot will notify you about your access.
