@@ -23,10 +23,13 @@ After completing these steps, you will have two files: a private key (`~/.ssh/id
 
 To add a keypair in Midgard using your existing public key, you can use the `/midgard add keypair` command in Discord. Here are the steps to add a keypair using this command:
 
-1. Open Discord and go to the Midgard server.
+1. Open Discord and go to the VAIT server.
 2. Type the following command in the #midgard-commands channel: `/midgard add keypair publickey:<your_ssh_key>`, where `<your_ssh_key>` is the content of your SSH public key file (which is the contents of `~/.ssh/id_ed25519.pub`).
 3. Press Enter to execute the command.
-
+<figure markdown>
+  ![Midgard Add Keypair](../assets/midgard_add_keypair.png)
+  <figcaption>Example add keypair command in Discord</figcaption>
+</figure>
 After completing these steps, your keypair will be added to Midgard and you can use it to launch instances.
 
 ## Updating a Key Pair

@@ -23,5 +23,5 @@ There are some key words you should know, which will help make your learning exp
 
 Just like your standard computer, your Cloud computer has an Operating System, this being Linux, with a number of distributions (a.k.a versions) available. At the moment, we support 2 main OS Distro: **Ubuntu** and **CentOS**.
 
-This is important to understand, so you know how to find instructions and/or troubleshoot problems you have. For example, you may wish to install a particular package or software on your Cloud Computer. To do this you would search ‘How to install [insert package name] on Linux’, which should (hopefully!) lead to the instructions you need.
+This is important to understand, so you know how to find instructions and/or troubleshoot problems you have. For example, you may wish to install a particular package or software on your Cloud Computer. To do this you would search "_How to install [insert package name] on Linux_", which should (hopefully!) lead to the instructions you need.
 

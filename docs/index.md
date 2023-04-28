@@ -1,4 +1,7 @@
 # Welcome to Midgard
+<figure markdown>
+  ![Midgard Logo](assets/logo.png){: style="height:300px;"}
+</figure>
 
 Welcome to **Midgard**, a private OpenStack cloud for VAIT testing, training, and development purposes. Currently, **Midgard** offers the following capacities:
 

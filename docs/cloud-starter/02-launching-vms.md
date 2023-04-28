@@ -1,15 +1,40 @@
-# Launching Instances
+# Launching a VM
 
-To launch the a basic instance:
+To launch a VM in Midgard Cloud, you can use the `/midgard server create` command in Discord. Here are the steps to launch a VM using this command:
 
-1. Logon to your Midgard Dashboard
-2. Navigate to `Project / Compute / Instances` in the navigation panel on the left hand side.
-3. Click the `Launch Instance` button to start the Launch Dialog.
-4. **Details Dialog:** Your instance must have a `name`; a `description` is optional. You can launch multiple instances at a time by setting the `Count` (e.g. 2 will launch 2 VM’s). Click `Next` to continue.
-5. **Source Dialog:** Choose a Boot Source. By default, Midgard booted from image and automatically create a persistent volume for persistence. If you do not need data persistence or choose `No` to create an volume option. Use the Filter widget to help you find the image you need; Use the up-arrow button beside the image you need to select it for launch (eg. `Ubuntu 22.04 LTS`)
-6. **Flavor Dialog:** Selected the required instance VCPUs, RAM and boot disk size. Use the up-arrow button beside the flavor you need to select it for launch. Eg. `m1.small`
-7. **Networks Dialog:** It is defaulted to private network. Unless you have specific networking requirement, the default option is ideal.
-8. **Security Groups:** It is recommended to add the `ssh` security group you created following [Security Groups](01-security-groups.md) in addition to the `default` security group.
-9. **Key Pair:** Choose the keypair that will be used to populated the instance `~/.ssh/authorized_keys`.
+1. Make sure you have the `cloudflared` binary installed on your computer. You can download it from the official [Cloudflare website](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation).
+2. Open Discord and go to the Midgard server.
+3. Type the following command in the #bot-commands channel: `/midgard server create flavor:m1.small image:Ubuntu 22.04`
+4. Press Enter to execute the command.
+<figure markdown>
+  ![Midgard Server Create](../assets/midgard_server_create.png)
+  <figcaption>Example create command in Discord</figcaption>
+</figure>
+This command will launch a VM with the following specifications:
 
+- Flavor: m1.small (1 vCPUs, 2.0GB RAM, 20GB HDD)
+- Image: Ubuntu 22.04
 
+Other flavor options are available:
+
+- m1.small (1 vCPUs, 2.0GB RAM, 20GB HDD)
+- m1.medium (2 vCPUs, 4.0GB RAM, 40GB HDD)
+
+Other image options are available:
+
+- CentOS 7
+- Ubuntu 22.04 LTS
+
+After completing these steps, your VM will be launched in Midgard Cloud and you can use SSH to connect to it using the public key you added to your Midgard account. Remember to specify the new keypair when launching the instance if you updated your keypair.
+
+## Accessing the VM
+
+To access your server, add the following to your `~/.ssh/config` file:
+```ssh-config
+Host midgard
+HostName {hostname}
+User {image_default_user}
+ProxyCommand /usr/local/bin/cloudflared access ssh --hostname {hostname}
+```
+
+Replace `{hostname}` with the Cloudflare hostname of your VM and `{image_default_user}` with the default image user account for your image (e.g. `ubuntu` for Ubuntu images). Then you can access your server by running `ssh midgard`. The create command will give you the exact parameters.

@@ -10,8 +10,8 @@ If you have never used or interacted with the Cloud before, best to start with t
 2. _Launching and connecting_: Launching and connecting to your [Virtual Machine (VM)](02-launching-vms.md).
 3. _Installing/updating software_: Using the command line on your VM.
 4. _Data_: Move some data from your local machine to your instance.
-<!-- 5. _Changing instances_: Rebooting, Resizing, Rebuilding and Deleting. -->
 6. _Port forwarding_: Share your instance with the world.
+<!-- 5. _Changing instances_: Rebooting, Resizing, Rebuilding and Deleting. -->
 
 ## What you’ll need
 
